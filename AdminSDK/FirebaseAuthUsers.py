@@ -16,4 +16,5 @@ firebase_admin.initialize_app(cred)
 page = auth.list_users()
 
 for user in page.users:
-    print(f"User ID: {user.uid}, User email: {user.email}, User phone: {user.phone_number}")
+    print(f"User ID: {user.uid}, User email: {user.email}, User phone: {user.phone_number} "
+          f"Verified: {user.email_verified}, Passwd: {user.password_hash}")

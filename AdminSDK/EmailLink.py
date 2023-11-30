@@ -7,13 +7,9 @@ firebase_admin.initialize_app(cred)
 email = input("Please enter an email address: ")
 
 try:
-    user = auth.get_user_by_email(email=email)
-    user_status = 'Active'
-    if user.disabled:
-        user_status = 'Inactive'
-    print(f"User ID: {user.uid}, User status: {user_status}")
-
+    # link = auth.generate_email_verification_link(email)
+    link = auth.generate_password_reset_link(email)
+    print(link)
 except:
     print(f"No user found with email {email}")
-
 
