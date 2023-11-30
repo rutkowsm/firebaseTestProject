@@ -10,10 +10,11 @@ ref = db.reference()
 
 nested_ref = ref.child('nested_data')
 
-nested_ref.child('users/user1/age').set(32)
+data = {
+    'users/user3': {'name': 'Frank', 'email': 'frankie@hld.com', 'age': 28},
+    'users/user4': {'name': 'Ottis', 'email': 'ottis@hld.com', 'age': 39},
+    'users/user5': {'name': 'Vinnie', 'email': 'vicent@hld.com', 'age': 23}
+}
 
-nested_ref.update({
-    'users/user2/name': 'Robert',
-    'users/user2/email': 'robert@company.com'
-})
+nested_ref.update(data)
 
