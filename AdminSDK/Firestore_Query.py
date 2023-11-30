@@ -22,11 +22,8 @@ emp_ref = db.collection('Employee')
 # for doc in docs:
 #     print(doc.to_dict())
 
-
-emp_ref.where(filter=FieldFilter('salary', '>', 700))
-emp_ref.where(filter=FieldFilter('status', '==', 'A'))
-
-docs = emp_ref.get()
+docs = emp_ref
+docs = docs.where(filter=FieldFilter('salary', '>', 700)).stream()
 
 
 for doc in docs:
