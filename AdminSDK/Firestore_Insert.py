@@ -6,10 +6,10 @@ firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
-doc_ref = db.collection('Employee').document('empdoc1')
+doc_ref = db.collection('Employee').document('empdoc5')
 
 doc_ref.set({
-    'name': 'Bob',
-    'last_name': 'Newman',
+    'first_name': 'Edward',
+    'last_name': 'Mitch',
     'status': 'A'
 })
