@@ -8,8 +8,9 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 status_search = "A"
+salary_threshold = 1000
 
-query = db.collection('Employee').where(filter=FieldFilter('status', '==', status_search))
+query = db.collection('Employee').where(filter=FieldFilter('status', '==', status_search)).where(filter=FieldFilter('salary', '>=', salary_threshold))
 
 results = query.get()
 
@@ -20,6 +21,8 @@ for doc in results:
     print(f"Emp ID: {doc.id}")
     print(f"Emp ID: {doc.get('first_name')}")
     print(f"Emp ID: {doc.get('last_name')}")
-    # print(f"Emp ID: {doc.get('salary')}")
+    print(f"Emp ID: {doc.get('salary')}")
     print(f"Emp ID: {doc.get('status')}")
     print("-" * 15)
+
+# https://firebase.google.com/docs/firestore/query-data/queries
