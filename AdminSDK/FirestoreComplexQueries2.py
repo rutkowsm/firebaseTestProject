@@ -8,9 +8,9 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 status_search = "A"
-salary_threshold = 1000
+salary_threshold = 1100
 
-query = db.collection('Employee').where(filter=FieldFilter('status', '==', status_search)).where(filter=FieldFilter('salary', '>=', salary_threshold))
+query = db.collection('Employee').where(filter=FieldFilter('status', '==', status_search)).where(filter=FieldFilter('salary', '==', salary_threshold))
 
 results = query.get()
 
