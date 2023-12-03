@@ -11,7 +11,7 @@ ref = db.reference('Employee')
 emp_ref = ref.child('emp2')
 
 emp_ref.update({
-    'email': 'zenon@company.com'
+    'email': 'zenek@company.com'
 })
 
 
